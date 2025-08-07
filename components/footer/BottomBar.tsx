@@ -5,9 +5,9 @@ import logo from "@/assets/Logos-01.png";
 
 export default function BottomBar() {
   return (
-    <div className="flex flex-col lg:flex-row items-center  justify-center lg:justify-between text-stone-500 py-7">
+    <div className="flex flex-col gap-1 lg:flex-row lg:justify-between items-center justify-center w-full py-4 lg:py-2 text-neutral-500 text-sm">
       <p>Furniqo. All Rights Reserved</p>
-      <div className="flex gap-3">
+      <div className="flex gap-3  ">
         <Link href="">Privacy Policy</Link>
         <Link href="">Help</Link>
         <Link href="">FAQs</Link>
