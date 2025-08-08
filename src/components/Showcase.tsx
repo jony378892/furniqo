@@ -2,7 +2,7 @@ import Image from "next/image";
 import ShowcaseInterface from "../interfaces/showcase.interface";
 
 export default async function Showcase() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/showcases`);
+  const res = await fetch(`https://furniqa.vercel.app/api/showcases`);
   const { data: showcaseData }: { data: ShowcaseInterface[] } =
     await res.json();
 

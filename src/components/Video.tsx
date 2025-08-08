@@ -9,6 +9,7 @@ export default function Video() {
         autoPlay
         muted
       />
+      Your browser does not support the video tag.
     </div>
   );
 }
