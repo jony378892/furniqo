@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-1 xs:gap-2 sm:gap-3 custom-width mb-10 px-2 md:px-4 h-auto max-h-screen mt-7">
+    <div className="grid grid-cols-2 grid-rows-2 gap-1 xs:gap-2 sm:gap-3 custom-width mb-10 px-2 md:px-4 h-auto max-h-screen mt-2 sm:mt-7 ">
       <div className="row-span-2 h-auto">
         <Image
           src="https://i.ibb.co.com/Jwjc6Qwz/premium-photo-1683121022649-b38ed074d5e5.jpg"

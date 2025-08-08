@@ -4,7 +4,7 @@ export default function Video() {
       {/* Background Video */}
       <video
         className="absolute inset-0 z-0 h-full w-full object-center object-cover"
-        src="video.mp4"
+        src="/video.mp4"
         loop
         autoPlay
         muted

@@ -54,7 +54,10 @@ export default function Navbar() {
               <h1 className="text-4xl font-extralight">Furniqo</h1>
             </Link>
             <div className="flex items-end gap-4">
-              <User className="hidden md:inline-flex stroke-1 size-7" />
+              <Link href="/user">
+                <User className="hidden md:inline-flex stroke-1 size-7" />
+              </Link>
+
               <div className="relative">
                 <Heart className="stroke-1 size-6" />
                 <span className="absolute w-5 h-5 flex items-center justify-center -top-2 -right-2 bg-black rounded-full text-white text-xs">

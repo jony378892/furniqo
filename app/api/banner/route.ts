@@ -1,5 +1,5 @@
 import connectDB from "@/src/lib/db";
-import Banner from "@/src/lib/modals/Banner.model";
+import Banner from "@/src/modals/Banner.model";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {

@@ -22,6 +22,7 @@ const connectDB = async () => {
     });
 
     console.log("Connected");
+    console.log(mongoose.connection.name);
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error("Error", error);
