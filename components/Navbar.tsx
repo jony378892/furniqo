@@ -50,7 +50,9 @@ export default function Navbar() {
               <LeftSidebar />
               <Search className="stroke-1 size-6" />
             </div>
-            <h1 className="text-4xl font-extralight">Furniqo</h1>
+            <Link href="/">
+              <h1 className="text-4xl font-extralight">Furniqo</h1>
+            </Link>
             <div className="flex items-end gap-4">
               <User className="hidden md:inline-flex stroke-1 size-7" />
               <div className="relative">

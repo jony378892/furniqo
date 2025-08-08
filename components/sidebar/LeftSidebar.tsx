@@ -26,7 +26,6 @@ export default function LeftSidebar() {
         <nav className="flex flex-col gap-4 text-sm lg:text-base items-start divide-y divide-black/10 px-4 font-medium *:pb-2 *:w-full">
           <Link href="/">HOME</Link>
           <Link href="/blogs">BLOGS</Link>
-          <Link href="/destinations">DESTINATIONS</Link>
           <Link href="/gallery">GALLERY</Link>
           <Link href="/about">ABOUT</Link>
           <Link href="/contact">CONTACT</Link>
