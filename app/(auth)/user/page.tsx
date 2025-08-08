@@ -5,19 +5,27 @@ import fb from "@/assets/logo/fb.png";
 
 import Image from "next/image";
 import Link from "next/link";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+interface FormInput {
+  email: string;
+  password: string;
+}
 
 export default function LoginPage() {
-  function handleSubmit() {}
+  const { register, handleSubmit } = useForm<FormInput>();
+  const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
 
   return (
-    <section className="flex items-center justify-center custom-width px-2 md:px-4 py-32">
-      <div className="flex flex-col border px-5 py-8  w-full max-w-sm shadow-lg rounded-lg">
-        <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+    <section className="flex items-center justify-start sm:justify-center custom-width px-2 md:px-4 py-32 ">
+      <div className="flex flex-col sm:border px-5 py-8 w-full max-w-sm sm:shadow-lg rounded-lg">
+        <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
           <p className="text-sm font-light">FURNIQO</p>
           <h3 className="text-3xl font-semibold">Sign in</h3>
           <div className="flex flex-col py-2">
             <label htmlFor="email">Email</label>
             <input
+              {...register("email", { required: true })}
               type="text"
               className="w-full px-3 py-1.5 border border-gray-400 rounded-sm"
             />
@@ -25,7 +33,8 @@ export default function LoginPage() {
           <div className="flex flex-col py-2">
             <label htmlFor="email">Password</label>
             <input
-              type="text"
+              {...register("password")}
+              type="password"
               className="w-full px-3 py-1.5 border border-gray-400 rounded-sm"
             />
           </div>
@@ -40,14 +49,14 @@ export default function LoginPage() {
           >
             Sign in
           </button>
-          <p className="text-center underline underline-offset-4 decoration-gray-500">
+          <p className="text-center text-sm underline underline-offset-4 decoration-gray-500 -mt-2">
             Forget your password?
           </p>
         </form>
 
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-full h-[2px] text-gray-500"></div>
+            <div className="w-full h-[2px] text-gray-500 my-5"></div>
             or
             <div className="w-full h-[2px] text-gray-500"></div>
           </div>
@@ -65,7 +74,7 @@ export default function LoginPage() {
               href="/"
               className="underline underline-offset-4 decoration-gray-500"
             >
-              Sing up
+              Sign up
             </Link>
           </p>
         </div>

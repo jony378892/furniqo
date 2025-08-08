@@ -1,4 +1,4 @@
-import { showcseData } from "@/mock/showcaseData";
+import { showcseData } from "@/src/mock/showcase.data";
 import Image from "next/image";
 
 export default function Showcase() {
@@ -13,7 +13,6 @@ export default function Showcase() {
               index % 2 === 1 ? "mt-6 sm:mt-12 md:mt-16" : ""
             }`}
           >
-            {/* ✅ Wrap image with overflow-hidden container */}
             <div className="overflow-hidden rounded-lg h-80 xl:h-96 w-full">
               <Image
                 src={data.image}

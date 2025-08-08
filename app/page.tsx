@@ -1,7 +1,7 @@
-import Banner from "@/components/Banner";
-import Quality from "@/components/Quality";
-import Showcase from "@/components/Showcase";
-import Statistic from "@/components/Statistic";
+import Banner from "@/src/components/Banner";
+import Quality from "@/src/components/Quality";
+import Showcase from "@/src/components/Showcase";
+import Statistic from "@/src/components/Statistic";
 import Products from "./products/page";
 
 export default function Home() {
