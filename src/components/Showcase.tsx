@@ -8,11 +8,12 @@ import Loading from "./Loading";
 export default function Showcase() {
   const { data: showcaseData, loading } =
     useFetch<ShowcaseInterface>("/api/showcases");
-  console.log(showcaseData);
 
   return (
     <section className="my-16">
-      <h3 className="text-3xl text-center mb-16 font-semibold">Top Products</h3>
+      <h3 className="text-3xl text-center mb-16 font-semibold">
+        Top <span className="text-amber-600">Products</span>
+      </h3>
       {loading ? (
         <Loading />
       ) : (

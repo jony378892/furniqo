@@ -8,8 +8,11 @@ import { Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export default function Products() {
+  const [wishlist, setWishlist] = useState<Product[]>([]);
   const pathname = usePathname();
   const {
     data: productData,
@@ -17,9 +20,32 @@ export default function Products() {
     error,
   } = useFetch<Product>("/api/products");
 
+  function handleWishlist(product: Product) {
+    const exists = wishlist.some((item) => item._id === product._id);
+    const updatedWishlist = exists
+      ? wishlist.filter((x) => x._id !== product._id)
+      : [...wishlist, product];
+
+    setWishlist(updatedWishlist);
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+
+    toast(
+      `"${product.title}" ${exists ? "removed from" : "added to"} wishlist`
+    );
+  }
+
+  useEffect(() => {
+    const localWishlist = localStorage.getItem("wishlist");
+    if (localWishlist) {
+      setWishlist(JSON.parse(localWishlist));
+    }
+  }, []);
+
   return (
     <section className="custom-width px-2 md:px-4 my-14 text-center ">
-      <h3 className="text-3xl my-10 font-semibold">Our Products</h3>
+      <h3 className="text-3xl my-10 font-semibold">
+        Our <span className="text-amber-600">Products</span>
+      </h3>
 
       {loading ? (
         <Loading />
@@ -38,10 +64,17 @@ export default function Products() {
               />
 
               {/* Heart Icon */}
-              <Heart className="absolute top-3 right-3 stroke-1 size-6 stroke-white bg-black/30 rounded-full p-1" />
+              <Heart
+                onClick={() => handleWishlist(data)}
+                className={`absolute top-3 right-3 stroke-1 size-7 stroke-white rounded-full p-1 ${
+                  wishlist.find((x) => x._id === data._id)
+                    ? "bg-amber-600 fill-amber-600"
+                    : "bg-black/30 "
+                }`}
+              />
 
               {/* Button */}
-              <button className="absolute left-2 right-2 bottom-2 bg-white border border-gray-200 shadow-md py-1 rounded-sm font-semibold text-sm hover:bg-white/80 cursor-pointer">
+              <button className="absolute left-2 right-2 bottom-2 bg-white text-amber-600 border border-gray-200 shadow-md py-1 rounded-sm font-semibold text-sm hover:bg-white/80 cursor-pointer">
                 SELECT OPTIONS
               </button>
             </div>
@@ -49,7 +82,7 @@ export default function Products() {
         </div>
       )}
 
-      {(pathname === "/products" || loading) && (
+      {pathname !== "/products" && (
         <Link
           href="/products"
           className=" self-center justify-self-center cursor-pointer mx-auto"

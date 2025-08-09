@@ -25,6 +25,7 @@ export default function LeftSidebar() {
         </SheetHeader>
         <nav className="flex flex-col gap-4 text-sm lg:text-base items-start divide-y divide-black/10 px-4 font-medium *:pb-2 *:w-full">
           <Link href="/">HOME</Link>
+          <Link href="/products">PRODUCTS</Link>
           <Link href="/blogs">BLOGS</Link>
           <Link href="/gallery">GALLERY</Link>
           <Link href="/about">ABOUT</Link>

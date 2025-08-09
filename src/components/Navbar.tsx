@@ -1,13 +1,17 @@
 "use client";
 
-import { Heart, Menu, Search, ShoppingCart, User } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+
+import { Heart, Search, User } from "lucide-react";
 import LeftSidebar from "./sidebar/LeftSidebar";
 import RightSidebar from "./sidebar/RightSidebar";
 
+import { useWishlist } from "../contexts/wishlist.context";
+
 export default function Navbar() {
   const [position, setPosition] = useState(false);
+  const { wishlist } = useWishlist();
 
   useEffect(() => {
     function handleScroll() {
@@ -20,7 +24,7 @@ export default function Navbar() {
     }
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // check on first render
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -32,7 +36,7 @@ export default function Navbar() {
       <div className="flex flex-col">
         <p className="text-center text-white text-xs py-3 bg-black">
           UP TO 40% OFF ON BEST SELLING FURNITURE.{" "}
-          <Link href="/shop" className="underline cursor-pointer">
+          <Link href="/products" className="underline cursor-pointer">
             SHOP NOW
           </Link>
         </p>
@@ -51,19 +55,19 @@ export default function Navbar() {
               <Search className="stroke-1 size-6" />
             </div>
             <Link href="/">
-              <h1 className="text-4xl font-extralight">Furniqo</h1>
+              <h1 className="text-4xl font-semibold text-amber-600">Furniqo</h1>
             </Link>
             <div className="flex items-end gap-4">
               <Link href="/user">
                 <User className="hidden md:inline-flex stroke-1 size-7" />
               </Link>
 
-              <div className="relative">
+              <Link href="/wishlist" className="relative">
                 <Heart className="stroke-1 size-6" />
                 <span className="absolute w-5 h-5 flex items-center justify-center -top-2 -right-2 bg-black rounded-full text-white text-xs">
-                  0
+                  {wishlist.length > 0 ? wishlist.length : 0}
                 </span>
-              </div>
+              </Link>
               <div className="relative flex items-center">
                 <RightSidebar />
                 <span className="absolute w-5 h-5 flex items-center justify-center -top-2 -right-2 bg-black rounded-full text-white text-xs">
