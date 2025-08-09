@@ -7,7 +7,6 @@ export const GET = async () => {
     await connectDB();
     const data = await Showcase.find();
     if (data) {
-      console.log(data);
       return new NextResponse(JSON.stringify({ success: true, data }));
     }
   } catch (error: unknown) {
