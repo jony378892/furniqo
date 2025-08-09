@@ -62,7 +62,7 @@ export default function Navbar() {
                 <User className="hidden md:inline-flex stroke-1 size-7" />
               </Link>
 
-              <Link href="/wishlist" className="relative">
+              <Link href="/user/wishlist" className="relative">
                 <Heart className="stroke-1 size-6" />
                 <span className="absolute w-5 h-5 flex items-center justify-center -top-2 -right-2 bg-black rounded-full text-white text-xs">
                   {wishlist.length > 0 ? wishlist.length : 0}
