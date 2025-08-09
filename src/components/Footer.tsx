@@ -6,7 +6,7 @@ import Ourservice from "./footer/Ourservice";
 
 export default function Footer() {
   return (
-    <footer className="max-w-[1450px] mx-auto w-full flex flex-col divide-y px-2 md:px-5 mt-10 border-t">
+    <footer className="max-w-[1450px] mx-auto w-full flex flex-col divide-y px-2 md:px-5 mt-10">
       <Newsletter className="xl:hidden py-10" />
       <OpeningHour className="md:hidden flex items-center justify-center py-10" />
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 w-full p-3 py-10">

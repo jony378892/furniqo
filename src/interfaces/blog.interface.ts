@@ -1,11 +1,9 @@
-interface BlogDataProps {
+interface Blog {
   _id: string;
   title: string;
-  summary: string;
-  image: string;
-  link: string;
   date: string;
+  summary: string;
   category: string;
 }
 
-export default BlogDataProps;
+export default Blog;

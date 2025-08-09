@@ -1,5 +1,6 @@
 "use client";
 
+import Error from "@/src/components/error";
 import Loading from "@/src/components/Loading";
 import useFetch from "@/src/hooks/useFetch";
 import Product from "@/src/interfaces/product.interface";
@@ -23,7 +24,7 @@ export default function Products() {
       {loading ? (
         <Loading />
       ) : error ? (
-        <p>{error}</p>
+        <Error error={error} />
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 md:gap-x-5 gap-y-8 md:gap-y-10 ">
           {productData?.map((data) => (
