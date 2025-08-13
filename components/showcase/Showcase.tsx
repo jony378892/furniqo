@@ -1,13 +1,12 @@
 import Error from "@/components/error";
 
 import ShowcaseInterface from "../../interfaces/showcase.interface";
-import { baseurl } from "@/lib/utils";
 import ShowcaseProduct from "./ShowcaseProduct";
 import ShowcaseSkeleton from "./ShowcaseSkeleton";
 import { Suspense } from "react";
 
 export default async function Showcase() {
-  const res = await fetch(baseurl + "/api/showcases");
+  const res = await fetch("/api/showcases");
   const data = await res.json();
 
   if (!data.success) {

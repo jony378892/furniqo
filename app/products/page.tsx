@@ -2,14 +2,10 @@ import Error from "@/components/error";
 import ProductCard from "@/components/products/ProductCard";
 import ProductPage from "@/components/products/ProductPage";
 import Product from "@/interfaces/product.interface";
-import { baseurl } from "@/lib/utils";
 import { Suspense } from "react";
 
 export default async function Products() {
-  /* const res = await axios.get("http://localhost:3000/api/products");
-  const productsData = await res.data.data; */
-
-  const res = await fetch(baseurl + "/api/products");
+  const res = await fetch("/api/products");
   const data = await res.json();
 
   if (!data.success) <Error error="Error fetching Data" />;
