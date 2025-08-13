@@ -5,14 +5,14 @@ import { NextResponse } from "next/server";
 export const GET = async () => {
   try {
     await connectDB();
-    const product = await Product.find({});
-    if (!product || product.length === 0) {
+    const products = await Product.find({});
+    if (!products || products.length === 0) {
       return new NextResponse(
         JSON.stringify({ success: false, message: "No product found" })
       );
     }
 
-    return new NextResponse(JSON.stringify({ success: true, data: product }));
+    return new NextResponse(JSON.stringify({ success: true, data: products }));
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error("Error", error);

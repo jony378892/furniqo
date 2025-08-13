@@ -9,9 +9,19 @@ import { Suspense } from "react";
 export default async function Showcase() {
   const res = await fetch(baseurl + "/api/showcases");
   const data = await res.json();
-  const showcaseData: ShowcaseInterface[] = await data.data;
 
-  if (!res.ok) <Error error="Error fetching Data" />;
+  if (!data.success) {
+    return (
+      <div>
+        <h3 className="text-3xl text-center font-semibold">
+          Top <span className="text-amber-600">Products</span>
+        </h3>
+        <Error error="Error fetching data" />;
+      </div>
+    );
+  }
+
+  const showcaseData: ShowcaseInterface[] = await data.data;
 
   return (
     <section className="my-16">

@@ -8,7 +8,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ShoppingCart } from "lucide-react";
-import Link from "next/link";
 
 export default function RightSidebar() {
   return (

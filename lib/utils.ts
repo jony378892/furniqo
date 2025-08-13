@@ -6,4 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const baseurl =
-  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  process.env.NODE_ENV === "production"
+    ? `https://${process.env.NEXT_PUBLIC_BASE_URL}`
+    : "http://localhost:3000";
