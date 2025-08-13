@@ -13,6 +13,7 @@ export default function BottomBar() {
         <Link href="">FAQs</Link>
       </div>
       <Image
+        style={{ width: "auto", height: "auto" }}
         src={logo}
         alt="payments logo"
         width={250}

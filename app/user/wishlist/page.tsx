@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { Heart } from "lucide-react";
 
-import { useWishlist } from "@/src/contexts/wishlist.context";
+import { useWishlist } from "@/contexts/wishlist.context";
 
 export default function Page() {
   const { wishlist, handleWishlist } = useWishlist();

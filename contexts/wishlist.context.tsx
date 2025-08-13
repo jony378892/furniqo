@@ -40,9 +40,7 @@ export default function WishlistProvider({
     if (stored) setWishlist(JSON.parse(stored));
   }, []);
 
-  useEffect(() => {
-    console.log("wishlist changed:", wishlist);
-  }, [wishlist]);
+  useEffect(() => {}, [wishlist]);
 
   return (
     <WishlistContext.Provider value={{ wishlist, handleWishlist }}>

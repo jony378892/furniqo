@@ -6,7 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/src/components/ui/sheet";
+} from "@/components/ui/sheet";
 import { Menu, User } from "lucide-react";
 import Link from "next/link";
 

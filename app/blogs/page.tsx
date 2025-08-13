@@ -1,9 +1,9 @@
 "use client";
 
-import Error from "@/src/components/error";
-import Loading from "@/src/components/Loading";
-import useFetch from "@/src/hooks/useFetch";
-import Blog from "@/src/interfaces/blog.interface";
+import Error from "@/components/error";
+import Loading from "@/components/Loading";
+import useFetch from "@/hooks/useFetch";
+import Blog from "@/interfaces/blog.interface";
 
 export default function BlogPage() {
   const { data: blogs, loading, error } = useFetch<Blog>("/api/blogs");

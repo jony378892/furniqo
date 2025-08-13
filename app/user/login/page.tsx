@@ -5,7 +5,7 @@ import fb from "@/assets/logo/fb.png";
 
 import Image from "next/image";
 import Link from "next/link";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "@/node_modules/react-hook-form/dist";
 
 interface FormInput {
   email: string;

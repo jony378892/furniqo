@@ -1,5 +1,5 @@
-import connectDB from "@/src/lib/db";
-import Showcase from "@/src/modals/showcase.model";
+import connectDB from "@/lib/db";
+import Showcase from "@/modals/showcase.model";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
